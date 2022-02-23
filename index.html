@@ -9,18 +9,22 @@
 
     <style>
       body {
+        background-color: #172A24;
+        color: white;
         font-family: 'PP Neue Montreal';
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 10px;
+        position: relative;
       }
 
       .hero {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-top: 20px;
+        padding-top: 10px;
         margin: 0 auto;
         max-width: 60%;
+        z-index: 999;
+        position: relative;
       }
 
       .hero img {
@@ -53,7 +57,7 @@
         margin-top: 20px;
       }
 
-      .countdown, .ceremony {
+      section {
         padding-top: 20px;
         padding-bottom: 20px;
         text-align: center;
@@ -66,56 +70,65 @@
       }
 
       :root {
-        --base:              #a673a4;
-        --bg-blend:          overlay;
-        --blur:              0px;
-        --fg-blend:          soft-light;
-        --foreground:        #102b24;
-        --opacity:           0.47;
-        --spacing:           0px;
-      }
+  --base:              #ffffff;
+  --bg-blend:          multiply;
+  --blur:              0px;
+  --fg-blend:          screen;
+  --foreground:        #102b24;
+  --opacity:           1;
+  --spacing:           1%;
+}
+.img-wrapper {
+  background-color:    var(--base);
+  display:             flex;
+  flex:                1 1 100%;
+  height:              100%;
+  overflow:            hidden;
+  position:            relative;
+  max-width: 500px;
+  margin: 40px auto;
+}
 
-      .img-wrapper {
-          background-color:    var(--base);
-          display:             flex;
-          flex:                1 1 100%;
-          height:              100%;
-          overflow:            hidden;
-          padding:             var(--spacing);
-          position:            relative;
-          max-width: 500px;
-          margin: 20px auto;
-        }
+.img-wrapper img {
+  filter:              grayscale(100%) contrast(1) blur(var(--blur));
+  flex:                1 0 100%;
+  height:              100%;
+  max-width:           100%;
+  mix-blend-mode:      var(--bg-blend);
+  object-fit:          cover;
+  opacity:             var(--opacity);
+  position:            relative;
+  width:               100%;
+}
 
-        .img-wrapper img {
-          filter:              grayscale(100%) contrast(1) blur(var(--blur));
-          flex:                1 0 100%;
-          height:              100%;
-          max-width:           110%;
-          mix-blend-mode:      var(--bg-blend);
-          object-fit:          cover;
-          opacity:             var(--opacity);
-          position:            relative;
-          width:               100%;
-        }
+.img-wrapper::before {
+  background-color:    var(--foreground);
+  bottom:              0;
+  content:             '';
+  height:              100%;
+  left:                0;
+  mix-blend-mode:      var(--fg-blend);
+  position:            absolute;
+  right:               0;
+  top:                 0;
+  width:               100%;
+  z-index:             1;
+}
 
-        .img-wrapper::before {
-          background-color:    var(--foreground);
-          bottom:              0;
-          content:             '';
-          height:              100%;
-          left:                0;
-          mix-blend-mode:      var(--fg-blend);
-          position:            absolute;
-          right:               0;
-          top:                 0;
-          width:               100%;
-          z-index:             1;
+
+        .floral {
+          opacity: .25;
+          position: absolute;
+          left: -25%;
+          z-index: 0;
         }
 
     </style>
   </head>
   <body>
+    <div class="floral">
+      <img src="/images/floral.png" alt="">
+    </div>
     <div class="hero">
       <img src="images/photo1.jpeg" alt="Gabbie and Keanan laughing">
       <img src="images/photo2.jpeg" alt="Gabbie and Keanan posing for a portrait selfshot photo">
@@ -130,14 +143,14 @@
 
     <hr>
 
-    <div class="countdown">
+    <section class="countdown">
       <h2 style="margin-bottom: 10px;">Countdown to the Big Day</h2>
       <div id="timer" class="text-4xl"></div>
-    </div>
+    </section>
 
     <hr>
 
-    <div class="ceremony">
+    <section class="ceremony">
       <h2 class="text-2xl">The Ceremony</h2>
       
       <div class="img-wrapper">
@@ -147,11 +160,17 @@
       <h3 class="text-xl mb-2">April 23, 2022</h3>
       <h3 class="text-xl mb-2">Kingswood United Methodist Church, Buffalo Grove, IL</h3>
       <h3 class="text-xl mb-2">Zoom Link to be provided</h3>
-    </div>
+    </section>
 
-    <div class="registry">
+    <hr>
+
+    <section class="virtual-attendance">
+      <h2 class="text-2xl">Virtual Attendance</h2>
+    </section>
+
+    <section class="registry">
       <h2>Registry</h2>
-    </div>
+    </section>
 
     <script>
       // Set the date we're counting down to
