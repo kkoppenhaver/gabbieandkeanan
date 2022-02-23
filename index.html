@@ -4,10 +4,67 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" href="/style.css">
+    <title>Gabbie and Keanan are getting married!</title>
+
+    <style>
+      body {
+        font-family: 'PP Neue Montreal';
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        margin: 0 auto;
+        max-width: 60%;
+        overflow: hidden;
+      }
+
+      .hero img {
+        margin-left: 20px;
+        margin-right: 20px;
+        max-width: 40%;
+      }
+
+      h1 {
+        font-family: 'Maharlika';
+      }
+
+      .main-info {
+        margin: 0 auto;
+        max-width: 800px;
+        padding-top: 40px;
+        text-align: center;
+      }
+
+      .main-info p {
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div class="hero">
+      <img class="main-image" src="/images/hero.jpg">
+      <img class="main-image" src="/images/hero.jpg">
+      <img class="main-image" src="/images/hero.jpg">
+    </div>
+
+    <div class="main-info">
+      <h1 class="text-4xl">Gabbie and Keanan are getting married!</h1>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea similique odit vel, nobis quibusdam quam possimus veniam reiciendis ipsa eos, fuga harum magnam iste, nisi voluptas earum impedit atque.</p>
+    </div>
+
+    <div class="countdown">
+      <h2>Countdown</h2>
+    </div>
+
+    <div class="ceremony">
+      <h2>Ceremony</h2>
+    </div>
   </body>
 </html>
