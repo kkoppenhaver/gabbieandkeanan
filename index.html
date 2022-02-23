@@ -70,59 +70,58 @@
       }
 
       :root {
-  --base:              #ffffff;
-  --bg-blend:          multiply;
-  --blur:              0px;
-  --fg-blend:          screen;
-  --foreground:        #102b24;
-  --opacity:           1;
-  --spacing:           1%;
-}
-.img-wrapper {
-  background-color:    var(--base);
-  display:             flex;
-  flex:                1 1 100%;
-  height:              100%;
-  overflow:            hidden;
-  position:            relative;
-  max-width: 500px;
-  margin: 40px auto;
-}
+        --base:              #ffffff;
+        --bg-blend:          multiply;
+        --blur:              0px;
+        --fg-blend:          screen;
+        --foreground:        #102b24;
+        --opacity:           1;
+        --spacing:           1%;
+      }
 
-.img-wrapper img {
-  filter:              grayscale(100%) contrast(1) blur(var(--blur));
-  flex:                1 0 100%;
-  height:              100%;
-  max-width:           100%;
-  mix-blend-mode:      var(--bg-blend);
-  object-fit:          cover;
-  opacity:             var(--opacity);
-  position:            relative;
-  width:               100%;
-}
+      .img-wrapper {
+        background-color:    var(--base);
+        display:             flex;
+        flex:                1 1 100%;
+        height:              100%;
+        overflow:            hidden;
+        position:            relative;
+        max-width: 500px;
+        margin: 40px auto;
+      }
 
-.img-wrapper::before {
-  background-color:    var(--foreground);
-  bottom:              0;
-  content:             '';
-  height:              100%;
-  left:                0;
-  mix-blend-mode:      var(--fg-blend);
-  position:            absolute;
-  right:               0;
-  top:                 0;
-  width:               100%;
-  z-index:             1;
-}
+      .img-wrapper img {
+        filter:              grayscale(100%) contrast(1) blur(var(--blur));
+        flex:                1 0 100%;
+        height:              100%;
+        max-width:           100%;
+        mix-blend-mode:      var(--bg-blend);
+        object-fit:          cover;
+        opacity:             var(--opacity);
+        position:            relative;
+        width:               100%;
+      }
 
+      .img-wrapper::before {
+        background-color:    var(--foreground);
+        bottom:              0;
+        content:             '';
+        height:              100%;
+        left:                0;
+        mix-blend-mode:      var(--fg-blend);
+        position:            absolute;
+        right:               0;
+        top:                 0;
+        width:               100%;
+        z-index:             1;
+      }
 
-        .floral {
-          opacity: .25;
-          position: absolute;
-          left: -25%;
-          z-index: 0;
-        }
-
+      .floral {
+        opacity: .25;
+        position: absolute;
+        left: -15%;
+        z-index: 0;
+      }
     </style>
   </head>
   <body>
@@ -159,17 +158,22 @@
 
       <h3 class="text-xl mb-2">April 23, 2022</h3>
       <h3 class="text-xl mb-2">Kingswood United Methodist Church, Buffalo Grove, IL</h3>
-      <h3 class="text-xl mb-2">Zoom Link to be provided</h3>
     </section>
 
     <hr>
 
     <section class="virtual-attendance">
       <h2 class="text-2xl">Virtual Attendance</h2>
+
+      <p>Due to the ongoing COVID-19 pandemic, we will also be livestreaming the ceremony. We will provide the Zoom link closer to the big day but we will start the stream just before 6:00PM Central Time (UTC−5).</p>
     </section>
 
+    <hr>
+
     <section class="registry">
-      <h2>Registry</h2>
+      <h2 class="text-2xl">Registry</h2>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto aliquid voluptatibus dolorem earum vitae at assumenda alias, non, voluptas molestias quidem quos libero. Quod odio, dignissimos modi culpa dolores, aliquam?</p>
     </section>
 
     <script>
