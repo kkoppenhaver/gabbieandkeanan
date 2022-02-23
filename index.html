@@ -21,7 +21,6 @@
         padding-top: 20px;
         margin: 0 auto;
         max-width: 60%;
-        overflow: hidden;
       }
 
       .hero img {
@@ -30,27 +29,97 @@
         max-width: 40%;
       }
 
-      h1 {
+      h1, #timer, h2, h3 {
         font-family: 'Maharlika';
       }
 
       .main-info {
         margin: 0 auto;
+        padding-bottom: 40px;
         max-width: 800px;
         padding-top: 40px;
         text-align: center;
       }
 
+      hr {
+        height: 1px;
+        background-color: #ccc;
+        border: none;
+        max-width: 100px;
+        margin: 10px auto;
+      }
+
       .main-info p {
         margin-top: 20px;
       }
+
+      .countdown, .ceremony {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      p {
+        line-height: 32px;
+        max-width: 700px;
+        margin: 10px auto;
+      }
+
+      :root {
+        --base:              #a673a4;
+        --bg-blend:          overlay;
+        --blur:              0px;
+        --fg-blend:          soft-light;
+        --foreground:        #102b24;
+        --opacity:           0.47;
+        --spacing:           0px;
+      }
+
+      .img-wrapper {
+          background-color:    var(--base);
+          display:             flex;
+          flex:                1 1 100%;
+          height:              100%;
+          overflow:            hidden;
+          padding:             var(--spacing);
+          position:            relative;
+          max-width: 500px;
+          margin: 20px auto;
+        }
+
+        .img-wrapper img {
+          filter:              grayscale(100%) contrast(1) blur(var(--blur));
+          flex:                1 0 100%;
+          height:              100%;
+          max-width:           110%;
+          mix-blend-mode:      var(--bg-blend);
+          object-fit:          cover;
+          opacity:             var(--opacity);
+          position:            relative;
+          width:               100%;
+        }
+
+        .img-wrapper::before {
+          background-color:    var(--foreground);
+          bottom:              0;
+          content:             '';
+          height:              100%;
+          left:                0;
+          mix-blend-mode:      var(--fg-blend);
+          position:            absolute;
+          right:               0;
+          top:                 0;
+          width:               100%;
+          z-index:             1;
+        }
+
     </style>
   </head>
   <body>
     <div class="hero">
-      <img class="main-image" src="/images/hero.jpg">
-      <img class="main-image" src="/images/hero.jpg">
-      <img class="main-image" src="/images/hero.jpg">
+      <img src="images/photo1.jpeg" alt="Gabbie and Keanan laughing">
+      <img src="images/photo2.jpeg" alt="Gabbie and Keanan posing for a portrait selfshot photo">
+      <img src="images/photo3.jpeg" alt="A photo of Gabbie and Keanan with her engagement ring presented">
     </div>
 
     <div class="main-info">
@@ -59,12 +128,60 @@
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea similique odit vel, nobis quibusdam quam possimus veniam reiciendis ipsa eos, fuga harum magnam iste, nisi voluptas earum impedit atque.</p>
     </div>
 
+    <hr>
+
     <div class="countdown">
-      <h2>Countdown</h2>
+      <h2 style="margin-bottom: 10px;">Countdown to the Big Day</h2>
+      <div id="timer" class="text-4xl"></div>
     </div>
 
+    <hr>
+
     <div class="ceremony">
-      <h2>Ceremony</h2>
+      <h2 class="text-2xl">The Ceremony</h2>
+      
+      <div class="img-wrapper">
+        <img src="images/kingswood.jpg" alt="Kingswood Church Sanctuary">
+      </div>
+
+      <h3 class="text-xl mb-2">April 23, 2022</h3>
+      <h3 class="text-xl mb-2">Kingswood United Methodist Church, Buffalo Grove, IL</h3>
+      <h3 class="text-xl mb-2">Zoom Link to be provided</h3>
     </div>
+
+    <div class="registry">
+      <h2>Registry</h2>
+    </div>
+
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Apr 23, 2022 18:00:00").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="timer"
+        document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+        + minutes + "m";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "We're Married!";
+        }
+      }, 1000);
+    </script>
   </body>
 </html>
